@@ -1,8 +1,8 @@
 package ru.netology.service;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import static org.testng.Assert.*;
+import static org.junit.Assert.*;
 
 public class CashbackHackServiceTest {
 
@@ -14,17 +14,17 @@ public class CashbackHackServiceTest {
         int expected = 400;
         int actual = service.remain(amount);
 
-        assertEquals(actual,expected);
+        assertEquals(expected,actual);
     }
     @Test
     public void calculateServiceNotInTheBoundary () {
         CashbackHackService service = new CashbackHackService();
-        int amount = 500;
+        int amount = 1500;
         int expected = 500;
         int actual = service.remain(amount);
 
         System.out.println(actual);
-        assertEquals(actual,expected);
+        assertEquals(expected,actual);
     }
     @Test
     public void calculateServiceInTheGradle () {
@@ -33,7 +33,6 @@ public class CashbackHackServiceTest {
         int amount = 1000;
         int expected = 0;
         int actual = service.remain(amount);
-
-        assertEquals(actual, expected);
+        assertEquals(expected,actual);
     }
 }
